@@ -2,16 +2,20 @@
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const Book = ({ book }) => {
-    const { image, bookName, tags, author, rating } = book;
-    console.log(book);
+    const navigate = useNavigate();
+    const {bookId, image, bookName, tags, author, rating } = book;
+    const details = (id)=>{
+        navigate(`details/${id}`)
+    }
     return (
-        <div className="card rounded-lg bg-base-100  border-2 ">
+        <div onClick={()=>details(bookId)} className="cursor-pointer card rounded-lg bg-base-100  border-2 ">
             <figure className="px-10 pt-10 ">
                 <img
                     src={image}
-                    alt="Shoes"
+                    alt="Book"
                     className="rounded-xl h-60" />
             </figure>
             <div className="card-body space-y-2">
