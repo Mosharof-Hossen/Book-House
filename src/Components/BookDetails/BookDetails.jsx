@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const BookDetails = () => {
@@ -11,7 +11,7 @@ const BookDetails = () => {
     return (
         <div className="flex container space-y-10 md:space-y-0 flex-col md:flex-row mx-auto p-5 mt-10">
             <div className="flex-1 ">
-                <img src={image} alt="" className="w-full mx-auto md:w-2/5" />
+                <img src={image} alt="" className="w-full mx-auto md:w-3/5" />
             </div>
             <div className="flex-1 pr-10">
                 <div className="space-y-3">
@@ -43,6 +43,11 @@ const BookDetails = () => {
                         <p>{yearOfPublishing}</p>
                         <p>{rating}</p>
                     </div>
+                </div>
+
+                <div className="my-5 space-x-3">
+                    <button className="border px-3 py-2 rounded font-bold">Read</button>
+                    <button className="border px-3 py-2 rounded font-bold text-white bg-[#50B1C9]">Wishlist</button>
                 </div>
 
             </div>
