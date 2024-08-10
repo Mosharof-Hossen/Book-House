@@ -12,7 +12,7 @@ const Header = () => {
     </>
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto px-3">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -49,7 +49,7 @@ const Header = () => {
                 </div>
                 <div className="navbar-end">
                     <a className="px-3 py-2 bg-primary-color-c text-white rounded mr-3 font-semibold">Sign In</a>
-                    <a className="px-3 py-2 bg-[#59C6D2] text-white rounded mr-3 font-semibold">Sign Up</a>
+                    <a className="px-3 py-2 bg-[#59C6D2] text-white rounded  font-semibold">Sign Up</a>
                 </div>
             </div>
         </div>
