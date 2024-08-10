@@ -10,7 +10,7 @@ const Banner = () => {
                         src="https://i.ibb.co/DKKVfh0/banner-1.png"
                         className="md:max-w-md w-full rounded-lg lg:mr-24" />
                     <div className="lg:ml-32 p-8 lg:p-0">
-                        <h1 className="text-5xl mb-8 font-bold font-playfair-display-y">Books to freshen up your bookshelf</h1>
+                        <h1 className="text-5xl font-bold mb-8 font-bold font-playfair-display-y">Books to freshen up your bookshelf</h1>
                         
                         <Link to={"/listed-books"}><button className="px-3 py-2 text-white bg-primary-color-c rounded btn-primary">View The List</button></Link>
                     </div>
