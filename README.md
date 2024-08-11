@@ -5,8 +5,9 @@
 2. U will see details of all Category Books.
 3. And then U can Read or Wishlist the book.
 4. In the Listed Books section u will see the all the Read and wishlist books U have Read or wishlisted.
-5. Pages to read is the statistics section u will see the all calculations
-6. Here I used Local storage.
+5. And you can sort books using rating, publication year and page count.
+6. Pages to read is the statistics section u will see the all calculations
+7. Here I used Local storage.
 
 ## Tools: 
 1.React Js
@@ -21,3 +22,4 @@
 
 6.Use Fake Data
 
+pro
