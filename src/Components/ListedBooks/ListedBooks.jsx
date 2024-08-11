@@ -14,7 +14,7 @@ const ListedBooks = () => {
 
     useEffect(() => {
         const readBooksId = getStorageCart("readCart");
-        const filteredReadBooks = data.filter((dt) => readBooksId.includes(dt.bookId));
+        const filteredReadBooks = Array.isArray(data)? data.filter((dt) => readBooksId.includes(dt.bookId)):[];
         setReadBooks(filteredReadBooks)
         const wishListBooksId = getStorageCart("wishlistCart");
         const filteredWishListBooks = data.filter((dt) => wishListBooksId.includes(dt.bookId));
