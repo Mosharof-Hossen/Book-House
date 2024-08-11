@@ -1,5 +1,7 @@
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useLoaderData, useParams } from "react-router-dom";
+import { getStorageCart, saveIdByReadAndWishList } from "../../Utilitis/LoaclStorage";
 
 
 const BookDetails = () => {
@@ -8,10 +10,27 @@ const BookDetails = () => {
     const { bookId, image, bookName, author, review, tags, totalPages, publisher, yearOfPublishing, rating } = books.find((book) => book.bookId == bookID)
     console.log(books);
     const handleReadBtn = (id, cartName) => {
-
+        const cart = getStorageCart(cartName);
+        if (!(cart.includes(id))) {
+            saveIdByReadAndWishList(id,cartName);
+            toast("Successfully Added");
+        }else{
+            toast("Already Added");
+        }
+        
     }
     const handleWishListBtn = (id, cartName) => {
-
+        const cart = getStorageCart("readCart");
+        const wishCart = getStorageCart(cartName);
+        if (!(cart.includes(id)) && !(wishCart.includes(id))) {
+            saveIdByReadAndWishList(id,cartName);
+            toast("Successfully Added");
+        }else if(wishCart.includes(id)){
+            toast("Already Added.")
+        }
+        else{
+            toast("Already Read!");
+        }
     }
 
     return (
@@ -52,8 +71,9 @@ const BookDetails = () => {
                 </div>
 
                 <div className="my-5 space-x-3">
-                    <button onClick={() => handleReadBtn(bookId,"readCart")} className="border px-3 py-2 rounded font-bold">Read</button>
-                    <button onClick={()=>handleWishListBtn(bookId,"wishlistCart")} className="border px-3 py-2 rounded font-bold text-white bg-[#50B1C9]">Wishlist</button>
+                    <button onClick={() => handleReadBtn(bookId, "readCart")} className="border px-3 py-2 rounded font-bold">Read</button>
+                    <button onClick={() => handleWishListBtn(bookId, "wishlistCart")} className="border px-3 py-2 rounded font-bold text-white bg-[#50B1C9]">Wishlist</button>
+                    <ToastContainer />
                 </div>
 
             </div>
