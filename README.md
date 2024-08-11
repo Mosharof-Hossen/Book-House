@@ -3,9 +3,9 @@
 ## Features: 
 1. It is a Book House website.
 2. U will see details of all Category Books.
-3. And then U can add under category.
-4. In the Donations section u will see the all the donations U have made.
-5. In the statistics section u will see the all calculations
+3. And then U can Read or Wishlist the book.
+4. In the Listed Books section u will see the all the Read and wishlist books U have Read or wishlisted.
+5. Pages to read is the statistics section u will see the all calculations
 6. Here I used Local storage.
 
 ## Tools: 
