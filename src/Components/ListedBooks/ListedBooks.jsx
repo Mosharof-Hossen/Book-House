@@ -24,6 +24,17 @@ const ListedBooks = () => {
 
     console.log(wishListBooks);
 
+    const handleDropDownMenu = (type) => {
+        if (type == "rating") {
+            let copyReadBooks = [...readBooks];
+            copyReadBooks.sort((a, b) => a.rating - b.rating);
+            setReadBooks(copyReadBooks);
+
+            let copyWishListBooks = [...wishListBooks];
+            copyWishListBooks.sort((a, b) => a.rating - b.rating);
+            setWishListBooks(copyWishListBooks);
+        }
+    }
     return (
         <div className="container mx-auto p-5">
             <div className="text-center bg-gray-200 rounded-lg">
@@ -33,9 +44,9 @@ const ListedBooks = () => {
                 <div className="dropdown ">
                     <div tabIndex={0} role="button" className=" text-center btn m-1 text-white bg-primary-color-c">Sorted By <FontAwesomeIcon icon={faArrowDown} /></div>
                     <ul tabIndex={0} className="dropdown-content menu bg-base-200 text-center font-semibold rounded-box z-[1] w-44 p-2 shadow">
-                        <li><a>Rating</a></li>
-                        <li><a>Number Of Pages</a></li>
-                        <li><a>Publisher year</a></li>
+                        <li onClick={() => handleDropDownMenu("rating")}><a>Rating</a></li>
+                        <li onClick={() => handleDropDownMenu("pageNumber")}><a>Number Of Pages</a></li>
+                        <li onClick={() => handleDropDownMenu("year")}><a>Publisher year</a></li>
                     </ul>
                 </div>
             </div>
