@@ -22,7 +22,6 @@ const ListedBooks = () => {
 
     }, [data])
 
-    console.log(wishListBooks);
 
     const handleDropDownMenu = (type) => {
         if (type == "rating") {

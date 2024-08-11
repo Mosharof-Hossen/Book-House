@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const ReadWishBook = ({ book }) => {
     const { bookId, image, bookName, category, author, tags, publisher, totalPages, yearOfPublishing, rating } = book;
-    console.log(book);
+    
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl">
             <div className=' flex justify-center'>
