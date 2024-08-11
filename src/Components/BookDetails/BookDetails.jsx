@@ -8,7 +8,7 @@ const BookDetails = () => {
     const { bookID } = useParams();
     const books = useLoaderData();
     const { bookId, image, bookName, author, review, tags, totalPages, publisher, yearOfPublishing, rating } = books.find((book) => book.bookId == bookID)
-    console.log(books);
+    
     const handleReadBtn = (id, cartName) => {
         const cart = getStorageCart(cartName);
         if (!(cart.includes(id))) {

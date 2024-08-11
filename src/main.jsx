@@ -11,25 +11,26 @@ import BookDetails from './Components/BookDetails/BookDetails.jsx'
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element:<App></App>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
+    path: "/",
+    element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-        path:"/",
-        element:<Home></Home>
+        path: "/",
+        element: <Home></Home>
       },
       {
-        path:"/listed-books",
+        path: "/listed-books",
+        loader: async () => fetch('data.json'),
         element: <ListedBooks></ListedBooks>
       },
       {
-        path:"/pages-to-read",
+        path: "/pages-to-read",
         element: <PagesToRead></PagesToRead>
       },
       {
-        path:"/details/:bookID",
-        loader:async ()=>fetch('data.json'),
+        path: "/details/:bookID",
+        loader: async () => fetch('data.json'),
         element: <BookDetails></BookDetails>
       }
     ]
