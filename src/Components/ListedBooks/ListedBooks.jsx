@@ -30,15 +30,20 @@ const ListedBooks = () => {
             <div>
                 sorted
             </div>
-            <div>
+            <div className="my-8 font-bold">
                 <div role="tablist" className="tabs tabs-lifted">
                     <a role="tab" onClick={() => setTab(true)} className={tab ? "tab tab-active" : "tab"}>Read Books</a>
                     <a role="tab" onClick={() => setTab(false)} className={tab ? "tab" : "tab tab-active"}>Wishlist Books</a>
                 </div>
             </div>
-            <div className="space-x-5 space-y-5">
+            <div className="space-x-5 space-y-5 md:w-3/4 mx-auto">
+                
                 {
+                    tab?
                     readBooks.map((rBook,idx)=><ReadWishBook key={idx} book={rBook}></ReadWishBook>)
+                    :
+                    wishListBooks.map((rBook,idx)=><ReadWishBook key={idx} book={rBook}></ReadWishBook>)
+
                 }
             </div>
         </div>
