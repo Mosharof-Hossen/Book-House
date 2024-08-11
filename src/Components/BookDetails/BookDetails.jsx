@@ -1,12 +1,18 @@
-import { useEffect } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+
+import { useLoaderData, useParams } from "react-router-dom";
 
 
 const BookDetails = () => {
-    const { bookId } = useParams();
+    const { bookID } = useParams();
     const books = useLoaderData();
-    const { image, bookName, author, review, tags, totalPages, publisher, yearOfPublishing, rating } = books.find((book) => book.bookId == bookId)
+    const { bookId, image, bookName, author, review, tags, totalPages, publisher, yearOfPublishing, rating } = books.find((book) => book.bookId == bookID)
+    console.log(books);
+    const handleReadBtn = (id, cartName) => {
 
+    }
+    const handleWishListBtn = (id, cartName) => {
+
+    }
 
     return (
         <div className="flex container space-y-10 md:space-y-0 flex-col md:flex-row mx-auto p-5 mt-10">
@@ -18,10 +24,10 @@ const BookDetails = () => {
                     <h2 className="text-5xl font-bold font-playfair-display-y">{bookName}</h2>
                     <p className='font-semibold text-xl'>By : {author} </p>
                 </div>
-                <hr className="my-4"/>
+                <hr className="my-4" />
                 <p className="font-semibold">Fiction</p>
-                <hr className="my-4"/>
-                <div  className="space-y-3">
+                <hr className="my-4" />
+                <div className="space-y-3">
                     <p className="text-gray-500 text-base"><span className="font-bold text-black">Review: </span>{review}</p>
                     <p><span className="font-bold">Tag: </span>
                         {
@@ -29,7 +35,7 @@ const BookDetails = () => {
                         }
                     </p>
                 </div>
-                <hr className="my-4"/>
+                <hr className="my-4" />
                 <div className="flex space-x-8">
                     <div className=" text-gray-500">
                         <p>Number of Pages:</p>
@@ -46,8 +52,8 @@ const BookDetails = () => {
                 </div>
 
                 <div className="my-5 space-x-3">
-                    <button className="border px-3 py-2 rounded font-bold">Read</button>
-                    <button className="border px-3 py-2 rounded font-bold text-white bg-[#50B1C9]">Wishlist</button>
+                    <button onClick={() => handleReadBtn(bookId,"readCart")} className="border px-3 py-2 rounded font-bold">Read</button>
+                    <button onClick={()=>handleWishListBtn(bookId,"wishlistCart")} className="border px-3 py-2 rounded font-bold text-white bg-[#50B1C9]">Wishlist</button>
                 </div>
 
             </div>
