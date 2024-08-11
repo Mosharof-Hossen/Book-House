@@ -34,6 +34,24 @@ const ListedBooks = () => {
             copyWishListBooks.sort((a, b) => a.rating - b.rating);
             setWishListBooks(copyWishListBooks);
         }
+        else if (type == "pageNumber") {
+            let copyReadBooks = [...readBooks];
+            copyReadBooks.sort((a, b) => a.totalPages - b.totalPages);
+            setReadBooks(copyReadBooks);
+
+            let copyWishListBooks = [...wishListBooks];
+            copyWishListBooks.sort((a, b) => a.totalPages - b.totalPages);
+            setWishListBooks(copyWishListBooks);
+        }
+        if (type == "year") {
+            let copyReadBooks = [...readBooks];
+            copyReadBooks.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            setReadBooks(copyReadBooks);
+
+            let copyWishListBooks = [...wishListBooks];
+            copyWishListBooks.sort((a, b) => a.yearOfPublishing - b.yearOfPublishing);
+            setWishListBooks(copyWishListBooks);
+        }
     }
     return (
         <div className="container mx-auto p-5">
